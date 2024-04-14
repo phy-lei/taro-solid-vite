@@ -11,9 +11,9 @@ module.exports = {
     ],
     // 设置自定义custom-render编译
     // [
-    //   "babel-preset-solid-taro",
+    //   "babel-plugin-transform-solid-jsx-ad-taro-components",
     //   {
-    //     moduleName: "tarojs-solid-custom-render",
+    //     moduleName: "@tarojs/plugin-framework-react/dist/reconciler",
     //     generate: "universal",
     //   },
     // ],
