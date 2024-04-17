@@ -20,15 +20,9 @@ babel编译的结果会多套一层get children，而这个其实编译出来的
 </taro-view-core>
 ```
 
-而stencil用solid导出的createSolidComponent的函数，是将stencil进行包裹，并且把defineCustomElement注册上，这样其实并不需要在关心组件的命名导出是怎样的了。而且在solid中，h函数的响应式是有问题的，可以看这个示例 https://playground.solidjs.com/anonymous/1aafbe32-9fdf-4912-be39-d64b074c28a2
+而stencil用solid导出的createSolidComponent的函数，是将stencil进行包裹，并且把defineCustomElement注册上，这样其实并不需要在关心组件的命名导出是怎样的了。而且在solid中，h函数的响应式是有问题的，可以看这个 [示例](https://playground.solidjs.com/anonymous/dd675c5d-7ed4-48fa-af71-9abbb55a2f21)
 
-示例中展示h函数在props中，会失去响应式，这也是由于solid的getter并不能监听到h中这种对象的props下发
-```
-h("div", { style: `color: ${props.color}` }, 2222); // 失去响应式
-
-h("div", { style: `color: ${color()}` }, 2222); // 在同一个组件可以响应式
-```
-而不通过props下发的话，这个color是可以响应式的，对于props的跟踪，solid采取的措施应该是不一致，还有待深入研究。
+随着props的更新，他会全量更新，这个机制违背了solid的原则，我定义为响应式失效。
 
 ## 解决
 本来只要对于web-component的组件来说，solid有一个solid-element的库去定义，这里面的实现跟stencil是很相似的，都是只要将web-component注册上，在使用自定义标签，就能正确生效了，也如这个项目的示例代码一样。
