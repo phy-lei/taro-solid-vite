@@ -58,6 +58,8 @@ export default defineConfig(async (merge, { command, mode }) => {
       }
     },
     h5: {
+      enableSourceMap: false,
+      // useHtmlComponents: true,
       publicPath: '/',
       staticDirectory: 'static',
       output: {
