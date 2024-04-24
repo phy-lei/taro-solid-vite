@@ -18,12 +18,14 @@ export default function Index() {
 
   return (
     <View class="index">
-      <View data-name="uid" class="flex" style={{color: currentColor(), margin: '10px'}} classList={{ bold: currentColor() === "blue" }}>
+      <View data-name={Math.random()} class="flex" style={{color: currentColor(), margin: '10px'}} classList={{ bold: currentColor() === "blue" }}>
         <Text ref={divRef}>Hello world! </Text>
       </View>
       <View style={`color: ${currentColor()}`} id={currentColor()}>
         <Text class={cls()}>Hello world2! </Text>
       </View>
+      <View textContent="12312"></View>
+      <View innerHTML="<taro-view-core>4555</taro-view-core>"></View>
       <Button onClick={() => setCls('bold')}>set class</Button>
       <Button onClick={() => setColor(color() + 1)}>set style</Button>
       <Counter count={0}></Counter>
