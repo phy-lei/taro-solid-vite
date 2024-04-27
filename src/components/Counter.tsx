@@ -17,7 +17,9 @@ export default function Counter(props) {
     <>
       <View class="flex">
         <Button onClick={add}>+</Button>
-        <Text class="add">{count()}</Text>
+        <Text class="add">{count()}
+          <Text>{Math.random()}</Text>
+        </Text>
         <Button onClick={sub}>-</Button>
       </View>
     </>
