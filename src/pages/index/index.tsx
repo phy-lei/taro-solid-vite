@@ -1,10 +1,11 @@
 import { View, Text, Button } from '@tarojs/components'
-import Counter from '@/components/Counter'
+import Counter from '../../components/Counter'
 import { createSignal, onMount, createMemo} from 'solid-js'
 import './index.css'
 
 
 const colorMap = ["red", "green", "blue"];
+
 export default function Index() {
   const [color, setColor] = createSignal(0)
   const [cls, setCls] = createSignal('')
@@ -13,7 +14,7 @@ export default function Index() {
   const currentColor = createMemo(() => colorMap[color() % 3])
 
   onMount(() => {
-    console.log('%c [ xxx ]', 'font-size:13px; background:pink; color:#bf2c9f;', divRef);
+    console.log('%c [ 1212 ]', 'font-size:13px; background:pink; color:#bf2c9f;', divRef);
   })
 
   return (
@@ -26,9 +27,9 @@ export default function Index() {
       </View>
       <View textContent="12312"></View>
       <View innerHTML="<taro-view-core>4555</taro-view-core>"></View>
-      <Button onClick={() => setCls('bold')}>set class</Button>
+      <Button onClick={() => {setCls('bold'); console.log(cls())}}>set class</Button>
       <Button onClick={() => setColor(color() + 1)}>set style</Button>
-      <Counter count={0}></Counter>
+      <Counter count={color()}></Counter>
       <View>{Math.random()}</View>
     </View>
   )
