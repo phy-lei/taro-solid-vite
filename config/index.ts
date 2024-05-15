@@ -28,7 +28,7 @@ export default defineConfig(async (merge, { command, mode }) => {
     },
     framework: 'solid',
     compiler: {
-      type: 'webpack5',
+      type: 'vite',
       prebundle: {
         enable: false
       }
@@ -58,9 +58,9 @@ export default defineConfig(async (merge, { command, mode }) => {
           }
         }
       },
-      // webpackChain(chain) {
-      //   chain.resolve.plugin('tsconfig-paths').use(TsconfigPathsPlugin)
-      // }
+      webpackChain(chain) {
+        chain.resolve.plugin('tsconfig-paths').use(TsconfigPathsPlugin)
+      }
     },
     h5: {
       enableSourceMap: false,
