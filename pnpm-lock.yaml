@@ -17,6 +17,9 @@ dependencies:
   '@tarojs/plugin-framework-react':
     specifier: 4.0.0-beta.45
     version: 4.0.0-beta.45(@tarojs/runtime@4.0.0-beta.45)(@tarojs/shared@4.0.0-beta.45)(@tarojs/taro@4.0.0-beta.45)(@vitejs/plugin-react@4.2.1)(postcss@8.4.33)(react@18.2.0)(vite@4.5.3)
+  '@tarojs/plugin-html':
+    specifier: 4.0.0-beta.45
+    version: 4.0.0-beta.45(@tarojs/taro@4.0.0-beta.45)(postcss@8.4.33)
   '@tarojs/plugin-platform-alipay':
     specifier: 4.0.0-beta.45
     version: 4.0.0-beta.45(@tarojs/components@4.0.0-beta.45)(@tarojs/runtime@4.0.0-beta.45)(@tarojs/taro@4.0.0-beta.45)(postcss@8.4.33)
@@ -2291,6 +2294,7 @@ packages:
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     optional: true
 
@@ -2299,6 +2303,7 @@ packages:
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     optional: true
 
@@ -2307,6 +2312,7 @@ packages:
     engines: {node: '>=10'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     optional: true
 
@@ -2315,6 +2321,7 @@ packages:
     engines: {node: '>=10'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     optional: true
 
@@ -2420,6 +2427,7 @@ packages:
     engines: {node: '>= 18'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: true
     optional: true
@@ -2665,6 +2673,7 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: true
     optional: true
@@ -2674,6 +2683,7 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: true
     optional: true
@@ -2683,6 +2693,7 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: true
     optional: true
@@ -2692,6 +2703,7 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: true
     optional: true
@@ -2791,6 +2803,7 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: true
     optional: true
@@ -2800,6 +2813,7 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: true
     optional: true
@@ -2809,6 +2823,7 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: true
     optional: true
@@ -2818,6 +2833,7 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: true
     optional: true
@@ -2903,6 +2919,29 @@ packages:
       lodash: 4.17.21
       react: 18.2.0
       vite: 4.5.3(@types/node@18.19.9)(less@4.2.0)(stylus@0.55.0)(terser@5.27.0)
+    transitivePeerDependencies:
+      - '@swc/helpers'
+      - '@tarojs/taro'
+      - '@types/postcss-url'
+      - '@types/react'
+      - '@types/webpack'
+      - '@types/webpack-dev-server'
+      - postcss
+      - rollup
+      - supports-color
+      - vue
+    dev: false
+
+  /@tarojs/plugin-html@4.0.0-beta.45(@tarojs/taro@4.0.0-beta.45)(postcss@8.4.33):
+    resolution: {integrity: sha512-Ox4ppmFLejBOfhnmYF/f86QZks0DTf/kBLEVAzcrurwBODvhwOFvN93berVt0TvxDR+Y6KQB42vXlAnSGUC97w==}
+    dependencies:
+      '@babel/generator': 7.23.6
+      '@babel/parser': 7.23.6
+      '@babel/traverse': 7.23.7
+      '@babel/types': 7.23.6
+      '@tarojs/runtime': 4.0.0-beta.45(@tarojs/shared@4.0.0-beta.45)
+      '@tarojs/service': 4.0.0-beta.45(@tarojs/runtime@4.0.0-beta.45)(@tarojs/shared@4.0.0-beta.45)(@tarojs/taro@4.0.0-beta.45)(postcss@8.4.33)
+      '@tarojs/shared': 4.0.0-beta.45
     transitivePeerDependencies:
       - '@swc/helpers'
       - '@tarojs/taro'
@@ -3310,7 +3349,7 @@ packages:
       sax: 1.2.4
       stylus: 0.55.0
       terser: 5.27.0
-      vite: 4.5.3(@types/node@18.19.9)(terser@5.27.0)
+      vite: 4.5.3(@types/node@18.19.9)(less@4.2.0)(stylus@0.55.0)(terser@5.27.0)
       vite-plugin-static-copy: 0.13.1(vite@4.5.3)
     transitivePeerDependencies:
       - '@babel/core'
@@ -3820,7 +3859,7 @@ packages:
       regenerator-runtime: 0.13.11
       systemjs: 6.14.3
       terser: 5.27.0
-      vite: 4.5.3(@types/node@18.19.9)(terser@5.27.0)
+      vite: 4.5.3(@types/node@18.19.9)(less@4.2.0)(stylus@0.55.0)(terser@5.27.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3836,7 +3875,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.23.3(@babel/core@7.23.7)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.0
-      vite: 4.5.3(@types/node@18.19.9)(terser@5.27.0)
+      vite: 4.5.3(@types/node@18.19.9)(less@4.2.0)(stylus@0.55.0)(terser@5.27.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -8225,6 +8264,7 @@ packages:
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: true
     optional: true
@@ -8234,6 +8274,7 @@ packages:
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: true
     optional: true
@@ -8243,6 +8284,7 @@ packages:
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: true
     optional: true
@@ -8252,6 +8294,7 @@ packages:
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: true
     optional: true
@@ -11125,31 +11168,6 @@ packages:
       webpack: 5.78.0(@swc/core@1.3.96)
     dev: true
 
-  /terser-webpack-plugin@5.3.10(@swc/core@1.3.96)(webpack@5.78.0):
-    resolution: {integrity: sha512-BKFPWlPDndPs+NGGCr1U59t0XScL5317Y0UReNrHaw9/FwhPENlq6bfgs+4yPfyP51vqC1bQ4rp1EfXW5ZSH9w==}
-    engines: {node: '>= 10.13.0'}
-    peerDependencies:
-      '@swc/core': '*'
-      esbuild: '*'
-      uglify-js: '*'
-      webpack: ^5.1.0
-    peerDependenciesMeta:
-      '@swc/core':
-        optional: true
-      esbuild:
-        optional: true
-      uglify-js:
-        optional: true
-    dependencies:
-      '@jridgewell/trace-mapping': 0.3.22
-      '@swc/core': 1.3.96
-      jest-worker: 27.5.1
-      schema-utils: 3.3.0
-      serialize-javascript: 6.0.2
-      terser: 5.27.0
-      webpack: 5.78.0(@swc/core@1.3.96)
-    dev: true
-
   /terser@5.27.0:
     resolution: {integrity: sha512-bi1HRwVRskAjheeYl291n3JC4GgO/Ty4z1nVs5AAsmonJulGxpSektecnNedrwK9C7vpvVtcX3cw00VSLt7U2A==}
     engines: {node: '>=10'}
@@ -11633,7 +11651,7 @@ packages:
       fast-glob: 3.3.2
       fs-extra: 11.2.0
       picocolors: 1.0.0
-      vite: 4.5.3(@types/node@18.19.9)(terser@5.27.0)
+      vite: 4.5.3(@types/node@18.19.9)(less@4.2.0)(stylus@0.55.0)(terser@5.27.0)
     dev: true
 
   /vite@4.5.3(@types/node@18.19.9)(less@4.2.0)(stylus@0.55.0)(terser@5.27.0):
@@ -11670,43 +11688,6 @@ packages:
       postcss: 8.4.38
       rollup: 3.29.4
       stylus: 0.55.0
-      terser: 5.27.0
-    optionalDependencies:
-      fsevents: 2.3.3
-    dev: false
-
-  /vite@4.5.3(@types/node@18.19.9)(terser@5.27.0):
-    resolution: {integrity: sha512-kQL23kMeX92v3ph7IauVkXkikdDRsYMGTVl5KY2E9OY4ONLvkHf04MDTbnfo6NKxZiDLWzVpP5oTa8hQD8U3dg==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': '>= 14'
-      less: '*'
-      lightningcss: ^1.21.0
-      sass: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      less:
-        optional: true
-      lightningcss:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      '@types/node': 18.19.9
-      esbuild: 0.18.20
-      postcss: 8.4.38
-      rollup: 3.29.4
       terser: 5.27.0
     optionalDependencies:
       fsevents: 2.3.3
@@ -11980,7 +11961,7 @@ packages:
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.10(@swc/core@1.3.96)(webpack@5.78.0)
+      terser-webpack-plugin: 5.3.10(@swc/core@1.3.96)(esbuild@0.19.12)(webpack@5.78.0)
       watchpack: 2.4.0
       webpack-sources: 3.2.3
     transitivePeerDependencies:

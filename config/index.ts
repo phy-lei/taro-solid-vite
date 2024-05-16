@@ -17,7 +17,7 @@ export default defineConfig(async (merge, { command, mode }) => {
     },
     sourceRoot: 'src',
     outputRoot: 'dist',
-    plugins: [],
+    plugins: ['@tarojs/plugin-html'],
     defineConstants: {
     },
     copy: {
@@ -28,7 +28,7 @@ export default defineConfig(async (merge, { command, mode }) => {
     },
     framework: 'solid',
     compiler: {
-      type: 'vite',
+      type: 'webpack5',
       prebundle: {
         enable: false
       }

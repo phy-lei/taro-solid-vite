@@ -19,6 +19,7 @@ export default function Index() {
 
   return (
     <View class="index">
+      <button>12123</button>
       <View data-name={Math.random()} class="flex" style={{color: currentColor(), margin: '10px'}} classList={{ bold: currentColor() === "blue" }}>
         <Text ref={divRef}>Hello world! </Text>
       </View>
