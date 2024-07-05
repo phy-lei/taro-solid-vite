@@ -1,6 +1,6 @@
 import { View, Text, Button } from '@tarojs/components'
 import Counter from '../../components/Counter'
-import { createSignal, onMount, createMemo} from 'solid-js'
+import { createSignal, onMount, createMemo, createEffect } from 'solid-js'
 import './index.css'
 
 
@@ -14,7 +14,11 @@ export default function Index() {
   const currentColor = createMemo(() => colorMap[color() % 3])
 
   onMount(() => {
-    console.log('%c [ 1212 ]', 'font-size:13px; background:pink; color:#bf2c9f;', divRef);
+    console.log('%c [ 1212222 ]', 'font-size:13px; background:pink; color:#bf2c9f;', divRef);
+  })
+
+  createEffect(() => {
+    console.log('%c [ xxx ]', 'font-size:13px; background:pink; color:#bf2c9f;', currentColor());
   })
 
   return (

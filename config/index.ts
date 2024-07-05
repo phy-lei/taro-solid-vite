@@ -17,7 +17,7 @@ export default defineConfig(async (merge, { command, mode }) => {
     },
     sourceRoot: 'src',
     outputRoot: 'dist',
-    plugins: ['@tarojs/plugin-html'],
+    plugins: [],
     defineConstants: {
     },
     copy: {
@@ -28,7 +28,7 @@ export default defineConfig(async (merge, { command, mode }) => {
     },
     framework: 'solid',
     compiler: {
-      type: 'webpack5',
+      type: 'vite',
       prebundle: {
         enable: false
       }
@@ -37,6 +37,7 @@ export default defineConfig(async (merge, { command, mode }) => {
       enable: false // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
     },
     mini: {
+      enableSourceMap: false,
       postcss: {
         pxtransform: {
           enable: true,

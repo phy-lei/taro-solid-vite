@@ -36,7 +36,7 @@ babel编译的结果会多套一层get children，而这个其实编译出来的
 
 难点：
 目前有的组件命名方式并不是统一的`taro-${Component}-core`，例如taro-picker-group，这个就没有-core，所以得组件名的映射，但是如果每次新增一个组件，就又得在该文件新增一个映射，为了考虑方便维护的问题，参考taro-components-library-react的自动生成components的脚本，可以扫描@tarojs/components的组件生成映射。
-
+pnpm
 ```bash
-pnpm link --global @tarojs/components @tarojs/plugin-framework-react @tarojs/webpack5-runner babel-preset-taro @tarojs/plugin-framework-solid @tarojs/plugin-platform-h5
+pnpm link --global @tarojs/components @tarojs/plugin-framework-solid @tarojs/webpack5-runner babel-preset-taro  @tarojs/plugin-platform-h5
 ```
