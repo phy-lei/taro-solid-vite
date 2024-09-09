@@ -1,4 +1,4 @@
-import { View, Text, Button } from '@tarojs/components'
+import { View, Text, Button,Input } from '@tarojs/components'
 import Counter from '../../components/Counter'
 import { createSignal, onMount, createMemo, createEffect } from 'solid-js'
 import './index.css'
@@ -14,7 +14,7 @@ export default function Index() {
   const currentColor = createMemo(() => colorMap[color() % 3])
 
   onMount(() => {
-    console.log('%c [ 1212222 ]', 'font-size:13px; background:pink; color:#bf2c9f;', divRef);
+    console.log('%c [ 1212222 ]', 'font-size:13px; background:pink; color:#bf2c9f;', divRef.focus());
   })
 
   createEffect(() => {
@@ -25,7 +25,7 @@ export default function Index() {
     <View class="index">
       <button>12123</button>
       <View data-name={Math.random()} class="flex" style={{color: currentColor(), margin: '10px'}} classList={{ bold: currentColor() === "blue" }}>
-        <Text ref={divRef}>Hello world! </Text>
+        <Input ref={(node) => divRef = node}> </Input>
       </View>
       <View style={`color: ${currentColor()}`} id={currentColor()}>
         <Text class={cls()}>Hello world2! </Text>
